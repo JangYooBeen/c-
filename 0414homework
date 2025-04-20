@@ -1,0 +1,141 @@
+#include <stdio.h>
+
+/*1.int main()
+{
+	int a = 10;
+
+	int* b;
+
+	b = &a;
+	
+
+	printf("a = %d\n", *b);
+
+	return 0;
+}*/  
+
+//2.int main()
+//{
+//	int a = 10;
+//
+//	int* b;
+//	int* c;
+//
+//	c = &a;
+//	*c = 15;
+//	b = &a;
+//
+//	printf("a = %d\n", *b);
+//
+//	return 0;
+//}
+
+//3.int main()
+//{
+//	int a = 10;
+//	int* b1 = &a;
+//	int* b2 = b1;
+//
+//
+//	printf("a = %d\n", *b2);
+//
+//	return 0;
+//}
+
+//4.int main()
+//{
+//	int a = 10;
+//
+//	int* b;
+//	int* c;
+//
+//	c = &a;
+//	*c = 15;
+//	b = &a;
+//
+//	printf("a = %d\n", *b);
+//
+//	return 0;
+//}
+
+
+//5.int main()
+//{
+//	int a = 10;
+//
+//	int* b = &a;
+//	int** c = &b;
+//
+//	printf("a = %d\n", **c);
+//
+//	return 0;
+//}
+
+//6.int main()
+//{
+//	int a = 10;
+//
+//	int* b = &a;
+//	int** c = NULL;
+//
+//	c = &b;
+//
+//	printf("a = %d\n", **c);
+//
+//	return 0;
+//}
+
+//7.int main()
+//{
+//	int n = 10;
+//	int* p = &n;
+//
+//
+//	printf("a = %d\n", *(p + 0));  // p에서 0만큼 떨어진 주소
+//
+//	return 0;
+//}
+
+
+
+//8.#include <stdio.h>
+//
+//int main()
+//{
+//	int n = 10;
+//	int* p = &n;
+//
+//	printf("%d\n", *p);
+//	++*p;  //1증가시키고 참조
+//	printf("%d\n", *p);
+//	*p++; // p값을 먼적 참조한다음에 증가여서 주소가 증가됨 값변화x
+//	printf("%d\n", *p);
+//
+//}
+
+//9.void Draw(int* c)
+//{
+//	printf("%d\n", *c);
+//}
+//
+//int main()
+//{
+//	int a = 777;
+//	Draw(&a);
+//}
+
+//10.void Draw(int a,int b, int* c)
+//{
+//	*c = a + b;
+//}
+//
+//int main()
+//{
+//	int n = 777;
+//	int result = 0;
+//
+//	Draw(n,300,&result);
+//
+//	printf("%d", result);
+// // 함수에서 result를 참조하고 있어서 값의 변화를 주고 함수가 끝나면 참조는 사라지지만 값은 보존되서 변환된 값이 출력
+//}
