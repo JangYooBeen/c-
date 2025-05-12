@@ -1,0 +1,25 @@
+*문자열 배얄
+
+아스키 코드  암기
+A - >65
+a -> 97
+'0' -> 48
+
+문자열은 주소값을 가짐 -> 문자열을 출력하는것은 문자열 주소로 접근해서 출력하는 것
+
+printf("%c %c\n", s[0], "ABC"[0]);  -> "ABC"도 주소를 가지고 있어서 "ABC"[0] 연산이 가능함
+
+printf("%s %s", s, arr, &arr[0]+1);  -> &arr[0] + 1 -> char형만큼 띄어씀(1byte)
+
+char arr[4] = "ABC";  -> 마지막 null 자리까지 4칸 ->  , A칸 B칸 C칸 0칸
+
+//#include <stdio.h>
+//
+//int main()
+//{
+//	char* s = "NULL";
+//	s = "ABC";
+//
+//	printf("%p %s\n", s, s);
+//	printf("%p %s\n", s+1, s+1);  // 주소 1증가(1byte증가) , B출력
+//}
