@@ -1,0 +1,25 @@
+char s[4] = "ABC";
+char s[4] = { 'A','B','C','\0' };
+char s[3] = { 'A','B','C' };  // 문자열이 아님  null이 없어서
+char s[] = { 'A','B','C' };   // 3이 생략 , 문자열 아님
+char s[] = { "ABC" };   // 4가 생략, 초기화가 있으면 생략 할 수 있음
+
+
+
+printf("string: %s\n", s);
+printf("string: %s\n", s, &s[0]);  // s의 시작 주소([0]의 주소)를 줘도 똑같음 위랑
+
+전역변수는 범위가 전체
+지역변수는 범위가 함수내에서만
+
+메모리공간은 global data, heap, stack 영역으로 나뉨
+
+heap:
+
+<stdlib.h> 필요 
+malloc() 함수로 생성, 주소를 반환함으로 포인터변수로 할당해야 함
+
+ex) int*p = malloc(sizeof(int)*4);
+     
+-> int형 4개 총 16바이트 생성
+     마지막에 free(p)로 해지
