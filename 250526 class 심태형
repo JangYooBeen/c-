@@ -1,0 +1,27 @@
+cpp 파일에는 함수의 정의 즉 함수의 내용을 적어야함
+.h 파일에는 함수의 헤더만 존재하는 파일이다. 함수 내용 x
+
+
+malloc,free,print는 함수를 통해서 출력하는게 유동적이다.
+
+malloc을 정의할때 어떤 type의 주소를 반환 할지를 보고 형변환 해줘서 주소를 반환해야함.
+
+
+구조체 형식:
+struct Point
+{
+	int x;  // <- 멤버라고 함  x멤버, y멤버
+	int y;
+};
+
+pt는 point 형식
+pt.x는 int 형식
+
+(x,y)는 좌표를 나타낸다.
+
+
+
+void PrintPoint(Point* pt)
+{
+	printf("(%d,%d)\n", pt->x, pt->y);  // 구조체 안에서 참조 (->)
+}
