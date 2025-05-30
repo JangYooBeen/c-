@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+struct Point1
+{
+	double x1;
+	double y1;
+	
+	double x2;
+	double y2;
+};
+
+struct Point2
+{
+	double x1;
+	double y1;
+
+	double x2;
+	double y2;
+};
+
+int main()
+{
+
+
+	Point1 p1 = {0,0,1,1};
+	Point2 p2 = { 0,1,1,0 };
+
+	double y1 = (p1.y2 - p1.y1) / (p1.x2 - p1.x1);
+	double a1 = p1.y1 - y1 * p1.x1;
+
+	double y2 = (p2.y2 - p2.y1) / (p2.x2 - p2.x1);
+	double a2 = p2.y1 - y2 * p2.x1;
+
+	double x = (a2 - a1) / (y1 - y2);
+	double y = y1 * x + a1;
+
+	printf("교점 좌표: %.2f,%.2f ", x,y);
+}
