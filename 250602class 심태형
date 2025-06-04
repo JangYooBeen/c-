@@ -1,0 +1,29 @@
+250602 class 심태형
+
+
+문자열 할당하는 방법
+1.
+ char s1[100] = { "ABCD" };  배열을 선언하고 대입
+2.
+ const char* s2 = "ABCD";  문자열을 참조, c언어에서는 문자열 참조 할때 상수(const)을 해줘야 오류X
+                                  -> 상수임으로 수정이 불가 Read만 가능 
+
+
+출력 코드
+
+gets_s(A, 100);  -> 입력한 값을 A에 할당 , A 크기는 100
+
+
+strcpy: 문자열 복사:
+			#include <String.h> 필요
+			
+			char a[100];
+ 			const char* b = "hello";
+
+			strcpy(a,b);  ->a가 b를 복사
+			printf("%s %s", a, b);  -> 둘다 hello
+
+
+			strcpy(a+1,b);  a[1]부터 복사시작
+			a[0] = h;
+			printf("%s",a);  ->hhe
