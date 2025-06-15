@@ -1,0 +1,46 @@
+int main()
+{
+	int n = 10;     // 초기화 연산자 (=), 상수
+	int k = 1 + 2;  // 연산자 (+)
+	int q = 10 / 3; // q는 정수, 10/3 은 실수
+
+	 // 형식변환: 연산을 하려면 두 데이터의 타입이 동일한 종류여야 함 -> (정수 != 실수) -> 자동적으로 같아지도록 됨
+     // 10/3 -> 정수로 되서 3이 되버림, 값은 메모리 공간에 저장됨
+
+	printf("%d\n", n);
+	printf("%d\n", k);
+	printf("%d\n", q);
+
+	return 0;
+}
+
+
+
+
+int main()
+{
+	//단항연산자(++,--)
+
+	int a = 10;
+	int result = 0;
+
+	printf("a : %d, result : %d\n", a, result);
+	result = ++a;    //  a 전위증가해라, 그리고 그 값을 result에 대입
+	printf("a : %d, result : %d\n", a, result);   // 11 ,11
+}
+
+
+
+
+int main()
+{
+	//논리연산자(값)   &&, ||(and , or)  , not은 단항연산자
+
+	int a = 1;
+	int b = 0;
+
+	printf("%d\n", a && b);	
+	printf("%d\n", a || b);
+	printf("%d\n", !b);
+	printf("%d\n", !b);
+}
