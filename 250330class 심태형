@@ -1,0 +1,77 @@
+	printf("% d : % d\n", sizeof(char), sizeof(c));   // char    1byte
+	printf("% d : % d\n", sizeof(short), sizeof(s));  // short   1byte
+	printf("% d : % d\n", sizeof(int), sizeof(n));    // int     4byte
+	printf("% d : % d\n", sizeof(long), sizeof(l));   // long    4byte
+	printf("% d : % d\n", sizeof(float), sizeof(f));  // float   4byte
+	printf("% d : % d\n", sizeof(double), sizeof(d)); // double  8byte
+
+
+
+
+if문 참거짓
+
+int main()
+{
+	if (1) //참
+	{
+		printf("Hello True\n");
+    }
+	if (0) //거짓
+	{
+		printf("Hello False\n");
+	}
+}
+
+
+
+switch문 
+
+int main()
+{
+	switch (2)
+	{
+	 case 1:
+		printf("A : %d\n", 1);
+		break;
+	 case 2:
+		 printf("B : %d\n", 2);
+		 break;
+	 case 3:
+		 printf("C : %d\n", 3);
+		 break;
+	}
+}
+
+
+
+
+
+int main()
+{
+	//반복문 for() -> 갯수가 정해저 있을때 사용
+	//반복문 while() -> 조건이 만족 하면 종료
+
+	for (int i = 0; i <= 5; ++i)  // 초기화, 조건, 증감
+	{
+		printf("int : %d\n", i);
+	}
+}
+
+
+
+
+함수를 미리 선언 하고 호출
+
+void SumInteger()
+{
+	int sum = 0;
+	for (int i = 1; i <= 10; ++i)
+		sum += 1;
+	printf("sum = %d\n", sum);
+}
+int main()
+{
+	SumInteger();
+	SumInteger();
+	SumInteger();
+}
