@@ -1,0 +1,76 @@
+struct StringArray                  -> 1000크기의 char형 포인터 하나, int형 변수 하나로 구성되이있는 구조체 생성
+{
+  char* s[1000];
+  int count = 0;
+};
+void PrintMenu()
+{
+  printf("1. 문자열 입력\n");
+  printf("2. 문자열 출력\n");
+  printf("3. 문자열 검색\n");
+  printf("4. 문자열 삭제\n");
+  printf("0. 프로그램 종료\n");
+  printf("\n");
+}
+void FreeStringArray(StringArray* ps)      ->프로그램종료후 함수를 호출, 구조체 안에서 count 된 만큼 반복하면서 배열안의 index를 free() 선언
+{
+  for (int i = 0; i < ps->count; ++i)
+    free(ps->s[i]);
+}
+int main()
+{
+  StringArray sa = { 0 };     -> 구조체안의 포인터배열 초기화
+  int run = 1;
+
+  while (run)     -> 반복
+  {
+    PrintMenu();
+
+    printf("선택 메뉴: ");
+    char c = _getch();    -> char형을 받아 c에 할당
+    switch (c)
+    {
+    case '1':
+    {
+      printf(" 문자열 입력 : ");
+      char buf[1000];
+      gets_s(buf, 1000);
+      if (strcmp("exit", buf) == 0)      -> exit 와 buf에 들어간 단어가 같을시 0을출력 하고 0이맞으면  조건문 충족
+        break;
+
+      sa.s[sa.count] = (char*)malloc(strlen(buf) + 1);  -> 구조체 안의 배열의 index에  null까지 포함한 buf의 string 길이만큼 heap 영역에 할당
+      strcpy(sa.s[sa.count], buf);    ->     인덱스 안의 heap영역의 크기에 buf를  copy
+      ++sa.count;
+    }
+    break;
+    case '2':
+    {
+      for (int i = 0; i < sa.count; ++i)
+        printf("string[%d] : %s\n", i, sa.s[i]);
+    }
+    break;
+    case '3':
+    {
+      char buf[1000];
+      printf("검색할 문자열 입력: ");
+      gets_s(buf, 1000);
+      for (int i = 0; i < sa.count; ++i)    -> count 만큼 반복할때 인덱스 값이랑 입력한 buf가 같으면 0출력 
+      {
+        if (strcmp(sa.s[i], buf) == 0)
+        {
+          printf("찾은 문자열은 %d index 에 존재!\n", i);
+          break;
+        }
+      }
+    }
+    break;
+    case '4':
+      break;
+    case '0':
+      run = 0;
+      break;
+    }
+  }
+
+  FreeStringArray(&sa);
+}
